@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :menu_items
+  resources :menus
   resources :seats
   resources :flights
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,11 @@
 # Tickets2
 
+Demonstrate model association
+keyword: has_many, belongs_to, validate, parial,render
+
+## steps
+
+
 rails g scaffold flight departure:datetime arrival:datetime destination:string baggage_allowance:decimal capacity:integer
 
 rails g scaffold seat flight_id:integer name:string baggage:decimal
@@ -130,8 +136,8 @@ copy from views/seats/index.html.erb
 remove
 ```
 <th>Flight</th>
-        <td><%= seat.flight_id %></td>
-        <%= link_to 'New Seat', new_seat_path %>
+<td><%= seat.flight_id %></td>
+<%= link_to 'New Seat', new_seat_path %>
 ```
 instance variable to local variable
 rename @seats to seats
@@ -155,3 +161,14 @@ end
 in app/views/flights/show.html.erb
 <%= render :partial=>"seat_list", :locals=>{:seats=>@flight.seats} %>
 
+
+# create menu and menu_item
+
+
+rails g scaffold menu name:string capacity:integer
+
+rails g scaffold menu_item menu_id:integer name:string url:string
+
+rake db:migrate
+
+## show 'new menu item' in /menus/1

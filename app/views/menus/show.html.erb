@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @menu.name %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @menu.capacity %>
+</p>
+
+<%= render :partial=>'menu_item_list', :locals=>{:menu_items=>@menu.menuItems} %>
+
+<%= render :partial=>'new_menu_item', :locals=>{:menu_item=>MenuItem.new(:menu_id=>@menu.id)} %>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

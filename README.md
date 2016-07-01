@@ -113,7 +113,28 @@ change instance variable @seat to local variable seat in _new_seat.html.erb
 <%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
 
 ## remove flight_id from _new_seat.html.erb
+```
   <div class="field">
     <%= f.label :flight_id %><br>
     <%= f.number_field :flight_id %>
   </div>
+```
+
+## add hidden_field in _new_seat.html.erb
+```
+<%= f.hidden_field :flight_id %>
+```
+
+# add _seat_list.html.erb
+copy from views/seats/index.html.erb
+remove
+```
+<th>Flight</th>
+        <td><%= seat.flight_id %></td>
+        <%= link_to 'New Seat', new_seat_path %>
+```
+instance variable to local variable
+rename @seats to seats
+
+## in app/views/flights/show.html.erb
+<%= render :partial=>"seat_list", :locals=>{:seats=>Seat.all} %>

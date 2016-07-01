@@ -145,4 +145,13 @@ rename @seats to seats
 
 undefined method `find_all_by_flight_id' for
 
-##
+## add has_many for model flight
+```
+class Flight < ActiveRecord::Base
+  has_many :seats
+end
+```
+
+in app/views/flights/show.html.erb
+<%= render :partial=>"seat_list", :locals=>{:seats=>@flight.seats} %>
+

@@ -109,3 +109,11 @@ change instance variable @seat to local variable seat in _new_seat.html.erb
 
 ```
 
+## pass local variable seat in app/views/flights/show.html.erb
+<%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
+
+## remove flight_id from _new_seat.html.erb
+  <div class="field">
+    <%= f.label :flight_id %><br>
+    <%= f.number_field :flight_id %>
+  </div>

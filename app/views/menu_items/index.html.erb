@@ -15,7 +15,7 @@
   <tbody>
     <% @menu_items.each do |menu_item| %>
       <tr>
-        <td><%= menu_item.menu_id %></td>
+        <td><%= menu_item.menu.name %></td>
         <td><%= menu_item.name %></td>
         <td><%= menu_item.url %></td>
         <td><%= link_to 'Show', menu_item %></td>

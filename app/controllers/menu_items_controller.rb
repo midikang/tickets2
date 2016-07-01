@@ -25,10 +25,11 @@ class MenuItemsController < ApplicationController
   # POST /menu_items.json
   def create
     @menu_item = MenuItem.new(menu_item_params)
-
+    @menu = @menu_item.menu
     respond_to do |format|
       if @menu_item.save
-        format.html { redirect_to @menu_item, notice: 'Menu item was successfully created.' }
+        format.html { redirect_to @menu, notice: 'Menu item was successfully created.' }
+        #format.html { redirect_to @menu_item, notice: 'Menu item was successfully created.' }
         format.json { render :show, status: :created, location: @menu_item }
       else
         format.html { render :new }

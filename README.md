@@ -26,3 +26,86 @@ edit_flight GET    /flights/:id/edit(.:format) flights#edit
 
 $ rake db:migrate
 
+    config.time_zone = 'Beijing'
+
+## create new seat parial for flights/1 url
+_new_seat.html.erb
+
+```
+<h1>New Seat</h1>
+
+<%= form_for(@seat) do |f| %>
+  <% if @seat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@seat.errors.count, "error") %> prohibited this seat from being saved:</h2>
+
+      <ul>
+      <% @seat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :flight_id %><br>
+    <%= f.number_field :flight_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage %><br>
+    <%= f.text_field :baggage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+```
+
+# call _new_seat.html.erb in app/views/flights/show.html.erb
+```
+<%= render :partial=>"new_seat" %>
+```
+
+#create seat variable in FlightsController in method show
+change instance variable @seat to local variable seat in _new_seat.html.erb
+```
+<h1>New Seat</h1>
+
+<%= form_for(seat) do |f| %>
+  <% if seat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seat.errors.count, "error") %> prohibited this seat from being saved:</h2>
+
+      <ul>
+      <% seat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :flight_id %><br>
+    <%= f.number_field :flight_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage %><br>
+    <%= f.text_field :baggage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+```
+

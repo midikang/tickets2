@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Id:</strong>
+  <%= @flight.id %>
+</p>
 <p>
   <strong>Departure:</strong>
   <%= @flight.departure %>
@@ -25,7 +28,7 @@
   <%= @flight.capacity %>
 </p>
 
-<%= render :partial=>"seat_list", :locals=>{:seats=>Seat.all} %>
+<%= render :partial=>"seat_list", :locals=>{:seats=>Seat.find_by_flight_id(@flight.id)} %>
 
 
 <%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>

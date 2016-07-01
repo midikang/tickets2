@@ -138,3 +138,11 @@ rename @seats to seats
 
 ## in app/views/flights/show.html.erb
 <%= render :partial=>"seat_list", :locals=>{:seats=>Seat.all} %>
+
+
+## 
+<%= render :partial=>"seat_list", :locals=>{:seats=>Seat.find_all_by_flight_id(@flight.id)} %>
+
+undefined method `find_all_by_flight_id' for
+
+##

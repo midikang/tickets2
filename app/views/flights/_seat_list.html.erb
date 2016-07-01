@@ -12,15 +12,8 @@
   </thead>
 
   <tbody>
-    <% seats.each do |seat| %>
-      <tr>
-        <td><%= seat.name %></td>
-        <td><%= seat.baggage %></td>
-        <td><%= link_to 'Show', seat %></td>
-        <td><%= link_to 'Edit', edit_seat_path(seat) %></td>
-        <td><%= link_to 'Destroy', seat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= seats.inspect%>
+    
   </tbody>
 </table>
 

@@ -28,7 +28,7 @@
   <%= @flight.capacity %>
 </p>
 
-<%= render :partial=>"seat_list", :locals=>{:seats=>Seat.find_by_flight_id(@flight.id)} %>
+<%= render :partial=>"seat_list", :locals=>{:seats=>@flight.seats} %>
 
 
 <%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>

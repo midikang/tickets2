@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Seats</h1>
-
+<h1>Listing Seats for flight to <%=@seats.first.flight.destination %> </h2>
 <table>
   <thead>
     <tr>
-      <th>Flight</th>
-      <th>Name</th>
-      <th>Baggage</th>
+      <th>Flight(destination)</th>
+      <th>|Name</th>
+      <th>|Baggage</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +14,9 @@
   <tbody>
     <% @seats.each do |seat| %>
       <tr>
-        <td><%= seat.flight_id %></td>
-        <td><%= seat.name %></td>
-        <td><%= seat.baggage %></td>
+        <td><%= seat.flight.destination %></td>
+        <td>|<%= seat.name %></td>
+        <td>|<%= seat.baggage %></td>
         <td><%= link_to 'Show', seat %></td>
         <td><%= link_to 'Edit', edit_seat_path(seat) %></td>
         <td><%= link_to 'Destroy', seat, method: :delete, data: { confirm: 'Are you sure?' } %></td>

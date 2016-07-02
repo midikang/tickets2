@@ -19,3 +19,7 @@ blog_comment
 rails generate scaffold blog title view_count:integer
 rails generate scaffold blog_content content:text blog_id:integer
 rails generate scaffold blog_comment content:text blog_id:integer
+
+## rake db:migrate
+http://localhost:3000/blogs/new
+add partial to 'New Blog' view

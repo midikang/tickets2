@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :blog_comments
+  resources :blog_contents
+  resources :blogs
   resources :menu_items
   resources :menus
   resources :seats

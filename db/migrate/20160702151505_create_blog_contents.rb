@@ -6,5 +6,7 @@ class CreateBlogContents < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :blog_contents, :blog_id
   end
 end

@@ -6,5 +6,7 @@ class CreateBlogComments < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :blog_comments, :blog_id
   end
 end

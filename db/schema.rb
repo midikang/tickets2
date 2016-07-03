@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702151509) do
+ActiveRecord::Schema.define(version: 20160702232337) do
 
   create_table "blog_comments", force: :cascade do |t|
     t.text     "content"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160702151509) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "blog_comments", ["blog_id"], name: "index_blog_comments_on_blog_id"
+
   create_table "blog_contents", force: :cascade do |t|
     t.text     "content"
     t.integer  "blog_id"
@@ -27,9 +29,17 @@ ActiveRecord::Schema.define(version: 20160702151509) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "blog_contents", ["blog_id"], name: "index_blog_contents_on_blog_id"
+
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.integer  "view_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +68,15 @@ ActiveRecord::Schema.define(version: 20160702151509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "order_date"
+    t.integer  "customer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
 
   create_table "seats", force: :cascade do |t|
     t.integer  "flight_id"

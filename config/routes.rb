@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :customers
   resources :blog_comments
   resources :blog_contents
   resources :blogs

@@ -61,6 +61,11 @@ class SeatsController < ApplicationController
     end
   end
 
+  def flight_seats
+    @flight = Flight.find(params[:flight_id])
+    render :partial=>"flights/seat_list", :locals=>{:seats=>@flight.seats}
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_seat

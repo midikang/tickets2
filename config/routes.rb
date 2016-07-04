@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  get '/flights/:flight_id/seats' =>"seats#flight_seats"
+  
   resources :blog_comments
   resources :blog_contents
   resources :blogs

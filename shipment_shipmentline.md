@@ -15,3 +15,8 @@ Unpermitted parameter: shipmentLines_attributes
    (14.6ms)  commit transaction
 Redirected to https://rails-midikang.c9users.io/shipments/3
 Completed 302 Found in 24ms (ActiveRecord: 15.3ms)
+
+
+
+# add charge
+rails g model charge shipment_id:integer carrier_account freight_term estimated_shipment_charge:integer actual_shipment_charge:integer freight_charge:integer

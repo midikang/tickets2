@@ -1,3 +1,3 @@
 class BlogComment < ActiveRecord::Base
-  belongs_to :blog, inverse_of: :blogContent
+  belongs_to :blog
 end

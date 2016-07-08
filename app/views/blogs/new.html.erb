@@ -18,6 +18,13 @@
     <%= f.text_field :title %>
   </div>
   <%= render :partial=>'new_content', :locals=>{ :blog_content=>BlogContent.new(:blog_id=>@blog.id) }%>
+  
+  <p>Blog content</p>
+  <%= f.field_for :blogContent do |blogContent_form|%>
+    <%=blogContent_form.label :content%>
+    <%=blogContent_form.text :content%>    
+  <%%>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

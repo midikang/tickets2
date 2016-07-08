@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708043338) do
+ActiveRecord::Schema.define(version: 20160708090451) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "kind"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20160708043338) do
     t.integer  "view_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "charges", force: :cascade do |t|
+    t.string   "carrier_account"
+    t.string   "freight_term"
+    t.integer  "estimated_shipment_charge"
+    t.integer  "actual_shipment_charge"
+    t.integer  "freight_charge"
+    t.integer  "shipment_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "flights", force: :cascade do |t|

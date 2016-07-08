@@ -16,6 +16,8 @@ class ShipmentsController < ApplicationController
   def new
     @shipment = Shipment.new
     3.times {@shipment.shipmentLines.build}
+    @shipment.charges.build
+    
   end
 
   # GET /shipments/1/edit
@@ -70,7 +72,7 @@ class ShipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipment_params
-      params.require(:shipment).permit(:customer_name, shipmentLines_attributes:[:id, :line_no, :item_id, :quantity])
+      params.require(:shipment).permit(:customer_name, shipmentLines_attributes:[:id, :line_no, :item_id, :quantity], charges_attributes:[:id,:carrier_account,:freight_term,:estimated_shipment_charge,:actual_shipment_charge,:freight_charge])
     end
     
     

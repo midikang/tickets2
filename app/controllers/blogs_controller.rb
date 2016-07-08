@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @blog.blogContent.build
   end
 
   # GET /blogs/1/edit
@@ -25,7 +26,6 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-    @blogContent = @blog.build_blogContent(blogContent_params)
 
     respond_to do |format|
       if @blog.save
@@ -70,11 +70,7 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :view_count)
+      params.require(:blog).permit(:title, :view_count, blogContent_attributes:[:id, :content])
     end
     
-    # add by Midi
-    def blogContent_params
-      params.require(:blogContent).permit(:content)
-    end
 end

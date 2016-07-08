@@ -31,6 +31,25 @@
     <% end %>
   </ul>
   
+   <p>Charges</p>
+   
+     <ul>
+    <%= f.fields_for :charges do |charges_form| %>
+      <li>
+        <%= charges_form.label :carrier_account %>
+        <%= charges_form.text_field :carrier_account %>
+        <%= charges_form.label :freight_term %>
+        <%= charges_form.text_field :freight_term %>
+        <%= charges_form.label :estimated_shipment_charge %>
+        <%= charges_form.number_field :estimated_shipment_charge %>
+        <%= charges_form.label :actual_shipment_charge %>
+        <%= charges_form.number_field :actual_shipment_charge %>
+        <%= charges_form.label :freight_charge %>
+        <%= charges_form.text_field :freight_charge %>
+      </li>
+    <% end %>
+  </ul>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

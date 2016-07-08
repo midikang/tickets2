@@ -15,7 +15,7 @@ class ShipmentsController < ApplicationController
   # GET /shipments/new
   def new
     @shipment = Shipment.new
-    10.times {@shipment.shipmentLines.build}
+    3.times {@shipment.shipmentLines.build}
   end
 
   # GET /shipments/1/edit

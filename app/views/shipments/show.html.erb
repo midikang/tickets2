@@ -15,12 +15,14 @@
   </thead>
   <tbody>
     <%= @shipment.shipmentLines.each do |shipmentLine| %>
-      <td><%= shipmentLine.line_no %></td>
-      <td><%= shipmentLine.item_id %></td>
-      <td><%= shipmentLine.quantity %></td>
-      <td><%= link_to 'Show', shipmentLine %></td>
-      <td><%= link_to 'Edit', edit_shipment_line_path(shipmentLine) %></td>
-      <td><%= link_to 'Destroy', shipmentLine, method: :delete, data:{ confirm: 'Are you sure?' } %></td>
+      <tr>
+        <td><%= shipmentLine.line_no %></td>
+        <td><%= shipmentLine.item_id %></td>
+        <td><%= shipmentLine.quantity %></td>
+        <td><%= link_to 'Show', shipmentLine %></td>
+        <td><%= link_to 'Edit', edit_shipment_line_path(shipmentLine) %></td>
+        <td><%= link_to 'Destroy', shipmentLine, method: :delete, data:{ confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

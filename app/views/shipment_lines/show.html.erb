@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shipment:</strong>
+  <%= @shipment_line.shipment_id %>
+</p>
+
+<p>
+  <strong>Line no:</strong>
+  <%= @shipment_line.line_no %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @shipment_line.item_id %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @shipment_line.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_shipment_line_path(@shipment_line) %> |
+<%= link_to 'Back', shipment_lines_path %>

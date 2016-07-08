@@ -1,0 +1,37 @@
+<%= form_for(@shipment) do |f| %>
+  <% if @shipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipment.errors.count, "error") %> prohibited this shipment from being saved:</h2>
+
+      <ul>
+      <% @shipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer_name %><br>
+    <%= f.text_field :customer_name %>
+  </div>
+  
+  <p>Lines</p>
+  <ul>
+    <%= f.fields_for :shipmentLines do |lines_form| %>
+      <li>
+        <%= lines_form.label :line_no %>
+        <%= lines_form.text_field :line_no %>
+        <%= lines_form.label :item_id %>
+        <%= lines_form.text_field :item_id %>
+        <%= lines_form.label :quantity %>
+        <%= lines_form.text_field :quantity %>
+        
+      </li>
+    <% end %>
+  </ul>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -15,6 +15,8 @@ class FlightsController < ApplicationController
   # GET /flights/new
   def new
     @flight = Flight.new
+    # add by midi
+    4.times {@flight.seats.build}
   end
 
   # GET /flights/1/edit
@@ -69,6 +71,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.require(:flight).permit(:departure, :arrival, :destination, :baggage_allowance, :capacity)
+      params.require(:flight).permit(:departure, :arrival, :destination, :baggage_allowance, :capacity, seats_attributes: [:id, :name, :baggage])
     end
 end

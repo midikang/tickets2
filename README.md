@@ -172,3 +172,45 @@ rails g scaffold menu_item menu_id:integer name:string url:string
 rake db:migrate
 
 ## show 'new menu item' in /menus/1
+
+
+# Building Complex Forms
+9.1 Configuring the Model
+
+Active Record provides model level support via the accepts_nested_attributes_for method:
+
+class Person < ActiveRecord::Base
+  has_many :addresses
+  accepts_nested_attributes_for :addresses
+end
+ 
+class Address < ActiveRecord::Base
+  belongs_to :person
+end
+ 
+9.2 Nested Forms
+
+The following form allows a user to create a Person and its associated addresses.
+
+<%= form_for @person do |f| %>
+  Addresses:
+  <ul>
+    <%= f.fields_for :addresses do |addresses_form| %>
+      <li>
+        <%= addresses_form.label :kind %>
+        <%= addresses_form.text_field :kind %>
+ 
+        <%= addresses_form.label :street %>
+        <%= addresses_form.text_field :street %>
+        ...
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+ 
+my code
+```
+rails g scaffold person name
+rails g scaffold address kind street
+
+```

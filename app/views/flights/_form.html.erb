@@ -31,6 +31,24 @@
     <%= f.label :capacity %><br>
     <%= f.number_field :capacity %>
   </div>
+  
+  <p>add seat</p>
+  
+  Seats:
+  <ul>
+    <%= f.fields_for :seats do |seats_form| %>
+      <li>
+        <%= seats_form.label :name %>
+        <%= seats_form.text_field :name %>
+ 
+        <%= seats_form.label :baggage %>
+        <%= seats_form.text_field :baggage %>
+
+      </li>
+    <% end %>
+  </ul>
+
+  
   <div class="actions">
     <%= f.submit %>
   </div>

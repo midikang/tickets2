@@ -3,7 +3,7 @@
   <strong>Customer name:</strong>
   <%= @shipment.customer_name %>
 </p>
-<p>Lines</p>
+<p><strong>Lines</strong></p>
 <table>
   <thead>
     <tr>
@@ -26,7 +26,33 @@
     <% end %>
   </tbody>
 </table>
-    
+<p><strong>Charges</strong></p>    
+<table>
+  <thead>
+    <tr>
+      <th>carrier_account</th>
+      <th>|freight_term</th>
+      <th>|estimated_shipment_charge</th>
+      <th>|actual_shipment_charge</th>
+      <th>|freight_charge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @shipment.charges.each do |charge| %>
+      <tr>
+        <td><%= charge.carrier_account %></td>
+        <td><%= charge.freight_term %></td>
+        <td><%= charge.estimated_shipment_charge %></td>
+        <td><%= charge.actual_shipment_charge %></td>
+        <td><%= charge.freight_charge %></td>
+        <td><%#= link_to 'Show', charge %></td>
+        <td><%#= link_to 'Edit', edit_charge_path(charge) %></td>
+        <td><%#= link_to 'Destroy', charge, method: :delete, data:{ confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
   
 
 <%= link_to 'Edit', edit_shipment_path(@shipment) %> |

@@ -1,0 +1,24 @@
+<div>
+  <%= form_for @article do |f|%>
+    <div>
+      <%= f.label :title%><br>
+      <%= f.text_field :title%><br><br>
+    </div>
+    
+    <div>
+      <%= f.label :content%><br>
+      <%= f.text_area :content%><br>
+    </div>
+    
+    <div>
+      <%= f.label 'File under at least one catetegory' %>
+      <% Category.all.order(name: :asc).each do |category|  %>
+        <div>
+          <%= check_box_tag "article[category_ids][]", category.id %>
+          <%= category.name %>
+        </div>
+      <% end %>
+    </div>
+    <%= f.submit %>
+  <%end %>
+</div>

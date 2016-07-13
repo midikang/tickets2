@@ -1,2 +1,13 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<h1>Write and Publish a New Article</h1>
+<% if @article.errors.any? %>
+  <div>
+    <h2>You'r missing some fields</h2>
+    <ul>
+      <% @article.errors.full_messages.each do |msg|%>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= render 'form' %>
+<%= link_to 'Cancel',articles_path%>

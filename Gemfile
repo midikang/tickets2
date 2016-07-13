@@ -45,3 +45,26 @@ end
 
 #gem 'faker'
 gem 'faker', '1.2'
+
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+gem 'therubyracer'
+=begin
+Important: You may need to add a javascript runtime to your Gemfile in order for bootstrap's LESS files to compile to CSS. 
+
+**********************************************
+
+ExecJS supports these runtimes:
+
+therubyracer - Google V8 embedded within Ruby
+
+therubyrhino - Mozilla Rhino embedded within JRuby
+
+Node.js
+
+Apple JavaScriptCore - Included with Mac OS X
+
+Microsoft Windows Script Host (JScript)
+
+**********************************************
+=end

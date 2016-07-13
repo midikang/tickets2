@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
   has_many :articleCategories
-  has_many :articles, :through => :articleCategories
+  has_many :articles, through: :articleCategories
   
-  validates :name, presence: true, uniqueness: true
+	validates_uniqueness_of :name
 end

@@ -105,3 +105,4 @@ rails g controller articles index show new create
 
 ## add resources 
 resources :articles
+https://rails-midikang.c9users.io/articles

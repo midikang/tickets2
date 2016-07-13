@@ -106,3 +106,27 @@ rails g controller articles index show new create
 ## add resources 
 resources :articles
 https://rails-midikang.c9users.io/articles
+
+## initial show view and action for Articles
+https://rails-midikang.c9users.io/articles/3
+
+articles_controller.rb
+```
+  def show
+    @article = Article.find(params[:id])
+  end
+```  
+  
+views/articles/show.html.erb
+```
+<div>
+  <h1><%=@article.title%></h1>
+  <p>Published <%= @article.created_at.strftime('%b %d, %Y')%></p>
+  <p>
+      File under :  <% @article.categories.each do |category| %>
+                      <%=category.name %> &nbsp;
+                    <% end %>
+  </p>
+  <p><%=@article.content%></p>
+</div>
+```

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
+  #get 'categorires/index'
+
+  #get 'categorires/show'
+
   resources :articles
+  resources :categories
 
   resources :shipment_lines
   resources :shipments

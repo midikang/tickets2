@@ -130,3 +130,5 @@ views/articles/show.html.erb
   <p><%=@article.content%></p>
 </div>
 ```
+
+## add controller categories

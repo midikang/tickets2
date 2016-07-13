@@ -99,3 +99,9 @@ class Category < ActiveRecord::Base
   
   validates :name, presence: true, uniqueness: true
 end
+
+## add article controller and view
+rails g controller articles index show new create
+
+## add resources 
+resources :articles

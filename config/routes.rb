@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :articles
+
   resources :shipment_lines
   resources :shipments
   resources :shipments

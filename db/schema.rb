@@ -11,12 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708090451) do
+ActiveRecord::Schema.define(version: 20160713020448) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "kind"
     t.string   "street"
     t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "article_categories", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "article_categories", ["article_id"], name: "index_article_categories_on_article_id"
+  add_index "article_categories", ["category_id"], name: "index_article_categories_on_category_id"
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +55,12 @@ ActiveRecord::Schema.define(version: 20160708090451) do
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.integer  "view_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -10,15 +10,15 @@
 
 <%= form_for(@flight, remote: true) do |f| %>
   <%= f.label :departure %>
-  <%= f.text_field :departure %><br>
+  <%= f.datetime_select :departure %><br>
   <%= f.label :arrival %>
-  <%= f.text_field :arrival %><br>
+  <%= f.datetime_select :arrival %><br>
   <%= f.label :destination %>
   <%= f.text_field :destination %><br>
   <%= f.label :baggage_allowance %>
   <%= f.text_field :baggage_allowance %><br>
   <%= f.label :capacity %>
-  <%= f.text_field :capacity %><br>
+  <%= f.number_field :capacity %><br>
   <%= f.submit %>
 <% end %>
 

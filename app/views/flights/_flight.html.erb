@@ -2,4 +2,4 @@
 arrival:<%=flight.arrival%>|
 destination:<%=flight.destination%>
 baggage_allowance:<%=flight.baggage_allowance%>|
-capacity:<%=flight.capacity%></li>
+capacity:<%=flight.capacity%>|<%= link_to 'Delete', flight, method: :delete, data: { confirm: 'Are you sure?' } %></li>

@@ -1,29 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<b>Flights</b>
-
-<ul id="flights">
-<%= render @flights %>
-</ul>
-
-<br>
-
-<%= form_for(@flight, remote: true) do |f| %>
-  <%= f.label :departure %>
-  <%= f.text_field :departure %><br>
-  <%= f.label :arrival %>
-  <%= f.text_field :arrival %><br>
-  <%= f.label :destination %>
-  <%= f.text_field :destination %><br>
-  <%= f.label :baggage_allowance %>
-  <%= f.text_field :baggage_allowance %><br>
-  <%= f.label :capacity %>
-  <%= f.text_field :capacity %><br>
-  <%= f.submit %>
-<% end %>
-
-<br>
-
 <h1>Listing Flights</h1>
 
 <table>

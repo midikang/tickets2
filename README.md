@@ -214,3 +214,7 @@ rails g scaffold person name
 rails g scaffold address kind street
 
 ```
+
+# link
+
+rails g model link name url category:reference

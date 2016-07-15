@@ -3,7 +3,7 @@ class CreateLinks < ActiveRecord::Migration
     create_table :links do |t|
       t.string :name
       t.string :url
-      t.reference :category
+      t.references :category
 
       t.timestamps null: false
     end

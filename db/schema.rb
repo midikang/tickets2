@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713020448) do
+ActiveRecord::Schema.define(version: 20160715062759) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "kind"
@@ -84,6 +84,14 @@ ActiveRecord::Schema.define(version: 20160713020448) do
     t.integer  "capacity"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "menu_items", force: :cascade do |t|

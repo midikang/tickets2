@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   #get 'categorires/show'
 
-  resources :articles
+  resources :articles do
+    member do
+      get 'search'
+    end
+  end
   resources :categories
 
   resources :shipment_lines

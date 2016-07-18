@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :links
 
-  root 'welcome#index'
+  root 'flights#index'
 
   #get 'categorires/index'
 

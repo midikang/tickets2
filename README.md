@@ -218,3 +218,23 @@ rails g scaffold address kind street
 # link
 
 rails g model link name url category:reference
+
+
+# add bootstrap
+gem 'therubyracer', platforms: :ruby
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
+bundle install
+rails g bootstrap:install
+```
+Running via Spring preloader in process 18832
+      insert  app/assets/javascripts/application.js
+      create  app/assets/javascripts/bootstrap.js.coffee
+      create  app/assets/stylesheets/bootstrap_and_overrides.css.less
+      create  config/locales/en.bootstrap.yml
+        gsub  app/assets/stylesheets/application.css
+```
+rails g bootstrap:layout
+
+rails g bootstrap:themed Traces        

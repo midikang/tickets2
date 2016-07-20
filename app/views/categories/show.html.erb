@@ -1,7 +1,13 @@
-<h1><%=@category.name%> Articles</h1>
-
-<ul>
-  <% @category.articles.each do |article| %>
-    <li><%= link_to article.title, article%><li>
-  <% end %>
-</ul>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%=@category.name%> Articles</h3>
+    <%=link_to "Back", categories_path%>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <% @category.articles.each do |article| %>
+        <%= link_to article.title, article, class:"list-group-item" %>
+      <% end %>
+    </div>
+  </div>
+</div>

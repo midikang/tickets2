@@ -46,9 +46,12 @@ end
 #gem 'faker'
 gem 'faker', '1.2'
 
-gem 'twitter-bootstrap-rails'
-gem 'less-rails'
-gem 'therubyracer'
+gem "therubyracer" 
+gem "less-rails" 
+gem "twitter-bootstrap-rails", "3.2.0.0"
+
+gem 'twitter-bootswatch-rails', "3.2.0.0" 
+gem 'twitter-bootswatch-rails-helpers',"3.2.0.0"
 =begin
 Important: You may need to add a javascript runtime to your Gemfile in order for bootstrap's LESS files to compile to CSS. 
 

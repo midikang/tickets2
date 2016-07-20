@@ -238,3 +238,12 @@ Running via Spring preloader in process 18832
 rails g bootstrap:layout
 
 rails g bootstrap:themed Traces        
+
+
+rails g bootswatch:install cerulean # 安装该 theme 的基础文件
+rails g bootswatch:import cerulean # 导入一个线上的 theme 的变量文件
+
+我们修改一下 application.css 中的引用：
+
+ *= require cerulean/loader
+ *= require cerulean/bootswatch

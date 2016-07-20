@@ -1,16 +1,26 @@
 <h1>Welecome to Midi's Rails Lab</h1>
 <%= render 'function_index'%>
-<br>
-<p>Here's our 5 most recent articles.</p>
-<br>
-<% @recent_articles.each do |article| %>
-  <article>
-    <h2><%= link_to article.title, article%></h2>
-    <p><%= article.created_at.strftime('%b %d, %Y')%></p>
-      <% article.categories.each do |category| %>
-        <%= link_to category.name, category %> 
-      <% end %>
-    <p><%= truncate(article.content, length:300)%></p>
-    <br>
-  </article>
-<% end %>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent articles.</h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+    <% @recent_articles.each do |article| %>
+        <h1><%= link_to article.title, article, class:"list-group-item" %> </h1>
+        <p>Posted at:<%= article.created_at.strftime('%b %d, %Y')%></p>
+          <% article.categories.each do |category| %>
+            <%= link_to category.name, category %> 
+          <% end %>
+          <br>
+        <br>
+        <p><%= truncate(article.content, length:300)%></p>
+        <br>
+        <br>
+        <br>
+        <br>
+    <% end %>
+    </div>
+  </div>
+</div>  

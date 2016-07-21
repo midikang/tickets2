@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'demo/mailbox'
+
   resources :links
 
   root 'welcome#index'

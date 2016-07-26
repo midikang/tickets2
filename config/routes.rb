@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :friends
   get 'demo/mailbox'
 
   resources :links

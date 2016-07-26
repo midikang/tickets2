@@ -57,3 +57,8 @@ To detach a file, simply set the attribute to nil:
 
   @user.avatar = nil
   @user.save  
+  
+  
+## paperclip validation
+Paperclip::Errors::MissingRequiredValidatorError in FriendsController#create
+

@@ -71,3 +71,5 @@ Microsoft Windows Script Host (JScript)
 
 **********************************************
 =end
+
+gem "paperclip", "5.0.0"

@@ -25,9 +25,6 @@ Rails.application.routes.draw do
   resources :people
   get '/flights/:flight_id/seats' =>"seats#flight_seats"
   
-  resources :blog_comments
-  resources :blog_contents
-  resources :blogs
   resources :menu_items
   resources :menus
   resources :seats

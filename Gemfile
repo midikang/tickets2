@@ -73,3 +73,8 @@ Microsoft Windows Script Host (JScript)
 =end
 
 gem "paperclip", "5.0.0"
+
+# generate erd
+group :development do
+  gem "rails-erd"
+end

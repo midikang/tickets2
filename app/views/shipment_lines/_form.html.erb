@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :shipment_id %><br>
-    <%= f.number_field :shipment_id %>
+    <%= f.label :shipment_id %>
+    <%= @shipment_line.shipment.customer_name unless @shipment_line.shipment.nil?  %>
   </div>
   <div class="field">
     <%= f.label :line_no %><br>

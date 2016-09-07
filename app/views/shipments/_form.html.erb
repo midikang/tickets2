@@ -15,40 +15,41 @@
     <%= f.label :customer_name %><br>
     <%= f.text_field :customer_name %>
   </div>
+  <br/>
+  <p><strong>Lines</strong></p> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>line_no </td>
+        <td>item_id </td>
+        <td>quantity</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.fields_for :shipmentLines do |lines_form| %>
+        <tr>
+          <td><%= lines_form.text_field :line_no %></td>
+          <td><%= lines_form.text_field :item_id %></td>
+          <td><%= lines_form.text_field :quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
   
-  <p>Lines</p>
-  <ul>
-    <%= f.fields_for :shipmentLines do |lines_form| %>
-      <li>
-        <%= lines_form.label :line_no %>
-        <%= lines_form.text_field :line_no %>
-        <%= lines_form.label :item_id %>
-        <%= lines_form.text_field :item_id %>
-        <%= lines_form.label :quantity %>
-        <%= lines_form.text_field :quantity %>
-        
-      </li>
-    <% end %>
-  </ul>
-  
-   <p>Charges</p>
-   
-     <ul>
-    <%= f.fields_for :charges do |charges_form| %>
-      <li>
-        <%= charges_form.label :carrier_account %>
-        <%= charges_form.text_field :carrier_account %>
-        <%= charges_form.label :freight_term %>
-        <%= charges_form.text_field :freight_term %>
-        <%= charges_form.label :estimated_shipment_charge %>
-        <%= charges_form.number_field :estimated_shipment_charge %>
-        <%= charges_form.label :actual_shipment_charge %>
-        <%= charges_form.number_field :actual_shipment_charge %>
-        <%= charges_form.label :freight_charge %>
-        <%= charges_form.text_field :freight_charge %>
-      </li>
-    <% end %>
-  </ul>
+ <p>Charges</p>
+ 
+  <%= f.fields_for :charges do |charges_form| %>
+      <%= charges_form.label :carrier_account %>
+      <%= charges_form.text_field :carrier_account %><br/>
+      <%= charges_form.label :freight_term %>
+      <%= charges_form.text_field :freight_term %><br/>
+      <%= charges_form.label :estimated_shipment_charge %>
+      <%= charges_form.number_field :estimated_shipment_charge %><br/>
+      <%= charges_form.label :actual_shipment_charge %>
+      <%= charges_form.number_field :actual_shipment_charge %><br/>
+      <%= charges_form.label :freight_charge %>
+      <%= charges_form.text_field :freight_charge %>
+  <% end %>
   
   <div class="actions">
     <%= f.submit %>

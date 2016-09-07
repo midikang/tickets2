@@ -4,13 +4,13 @@
   <%= @shipment.customer_name %>
 </p>
 <p><strong>Lines</strong></p>
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>line_no</th>
       <th>|item_id</th>
       <th>|quantity</th>
-      <th colspan="3"></th>
+      <th colspan="3">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -27,7 +27,7 @@
   </tbody>
 </table>
 <p><strong>Charges</strong></p>    
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>carrier_account</th>
@@ -35,7 +35,7 @@
       <th>|estimated_shipment_charge</th>
       <th>|actual_shipment_charge</th>
       <th>|freight_charge</th>
-      <th colspan="3"></th>
+      <th colspan="3">Action</th>
     </tr>
   </thead>
   <tbody>
